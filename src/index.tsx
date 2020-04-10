@@ -2,13 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
 
-import { unregister } from "../src/core";
+import { Content, Title } from "./components";
 import { GlobalStyles, theme } from "./styles";
+import { unregister } from "./core";
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <GlobalStyles />
-    <div>Hello World!</div>
+    <Content>
+      <Title>Sudo Sudoku</Title>
+    </Content>
   </ThemeProvider>,
   document.getElementById("root")
 );
