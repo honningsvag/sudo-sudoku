@@ -6,11 +6,10 @@ import { unregister } from "../src/core";
 import { GlobalStyles, theme } from "./styles";
 
 ReactDOM.render(
-  <>
-    <ThemeProvider theme={theme} />
+  <ThemeProvider theme={theme}>
     <GlobalStyles />
     <div>Hello World!</div>
-  </>,
+  </ThemeProvider>,
   document.getElementById("root")
 );
 
