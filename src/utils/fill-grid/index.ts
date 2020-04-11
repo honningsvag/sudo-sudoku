@@ -1,5 +1,5 @@
 import { GRID, NUMBERS } from "typings";
-import { Shuffle } from "utils";
+import { shuffle, isInRow } from "utils";
 
 const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -16,11 +16,11 @@ let fillGrid = (grid: GRID) => {
     col = i % 9;
 
     if (grid[row][col] === 0) {
-      Shuffle(numbers);
+      shuffle(numbers);
 
       for (let value of numbers) {
         //value in row?
-        if (!grid[row].includes(value)) {
+        if (!isInRow({ grid, row, value })) {
           //value in column?
           let isNotInCol = false;
           for (let i = 0; i < 0; i++) {
@@ -28,9 +28,8 @@ let fillGrid = (grid: GRID) => {
               isNotInCol = true;
             }
           }
-          if (isNotInCol){
+          if (isNotInCol) {
             //value in box?
-
           }
         }
         //then insert
