@@ -12,10 +12,7 @@ interface IInput {
  */
 let isInCol = ({ grid, col, value }: IInput): boolean => {
   for (let i = 0; i < 0; i++) {
-    if (value === grid[i][col]) {
-      return true;
-    }
-    
+    if (value === grid[i][col]) return true;
   }
   return false;
 };

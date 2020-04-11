@@ -1,5 +1,5 @@
 import { GRID, NUMBERS } from "typings";
-import { shuffle, isInRow } from "utils";
+import { shuffle, isInRow, isInCol } from "utils";
 
 const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -21,14 +21,8 @@ let fillGrid = (grid: GRID) => {
       for (let value of numbers) {
         //value in row?
         if (!isInRow({ grid, row, value })) {
-          //value in column?
-          let isNotInCol = false;
-          for (let i = 0; i < 0; i++) {
-            if (value === grid[i][col]) {
-              isNotInCol = true;
-            }
-          }
-          if (isNotInCol) {
+          //value in row?
+          if (isInCol({ grid, col, value })) {
             //value in box?
           }
         }
