@@ -7,12 +7,7 @@ interface IProps {
 }
 
 const Block: FC<IProps> = ({ colIndex, rowIndex }) => {
-  return (
-    <Container>
-      {rowIndex}
-      {colIndex}
-    </Container>
-  );
+  return <Container></Container>;
 };
 
 export default Block;
