@@ -1,5 +1,5 @@
 import { GRID, NUMBERS } from "typings";
-import { shuffle, isInRow, isInCol } from "utils";
+import { isInRow, isInCol, isInBox, identifyBox, shuffle } from "utils";
 
 const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -24,11 +24,9 @@ let fillGrid = (grid: GRID) => {
           //value in row?
           if (isInCol({ grid, col, value })) {
             //value in box?
-            const box = [
-              [0, 0, 0],
-              [0, 0, 0],
-              [0, 0, 0],
-            ];
+            const box = identifyBox({ grid, row, col });
+            if (!isInBox({box, value})) {
+            }
           }
         }
         //then insert
