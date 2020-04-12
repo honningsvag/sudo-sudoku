@@ -1,5 +1,12 @@
 import { GRID, NUMBERS } from "typings";
-import { isInRow, isInCol, isInBox, identifyBox, shuffle } from "utils";
+import {
+  isInRow,
+  isInCol,
+  isInBox,
+  isGridFull,
+  identifyBox,
+  shuffle,
+} from "utils";
 
 const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -25,12 +32,14 @@ let fillGrid = (grid: GRID) => {
           if (isInCol({ grid, col, value })) {
             //value in box?
             const box = identifyBox({ grid, row, col });
-            if (!isInBox({box, value})) {
+            if (!isInBox({ box, value })) {
+              //then insert
+              grid[row][col] = value;
+              if (isGridFull(grid)) return true;
+              else if (fillGrid(grid)) return true;
             }
           }
         }
-        //then insert
-        grid[row][col] = value;
         //is grid full?
       }
       break;
