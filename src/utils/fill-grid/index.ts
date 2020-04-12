@@ -24,6 +24,11 @@ let fillGrid = (grid: GRID) => {
           //value in row?
           if (isInCol({ grid, col, value })) {
             //value in box?
+            const box = [
+              [0, 0, 0],
+              [0, 0, 0],
+              [0, 0, 0],
+            ];
           }
         }
         //then insert
