@@ -29,7 +29,7 @@ let fillGrid = (grid: GRID) => {
         //value in row?
         if (!isInRow({ grid, row, value })) {
           //value in row?
-          if (isInCol({ grid, col, value })) {
+          if (!isInCol({ grid, col, value })) {
             //value in box?
             const box = identifyBox({ grid, row, col });
             if (!isInBox({ box, value })) {
