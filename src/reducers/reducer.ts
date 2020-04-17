@@ -13,6 +13,12 @@ const reducer = (state = initialState, action: AnyAction): IReducer => {
         grid: createFullGrid(),
       };
 
+    case types.SELECT_BLOCK:
+      return {
+        ...state,
+        selectedBlock: action.coords,
+      };
+
     default:
       return state;
   }

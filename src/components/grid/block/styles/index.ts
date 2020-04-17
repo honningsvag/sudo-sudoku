@@ -1,9 +1,13 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
-  ${({theme}) => css`
+interface IProps {
+  active?: boolean;
+}
+
+export const Container = styled.div<IProps>`
+  ${({theme, active}) => css`
     align-items: center;
-    background-color: ${theme.colors.mainWhite};
+    background-color: ${active? theme.colors.mainBlue : theme.colors.mainWhite};
     border: solid 1px ${theme.colors.mainBlack};
     cursor: pointer;
     display: flex;
