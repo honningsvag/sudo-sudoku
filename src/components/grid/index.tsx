@@ -1,6 +1,7 @@
 import React, { Children, FC, useEffect, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { Dispatch, AnyAction } from "redux";
+import useMousetrap from "react-hook-mousetrap";
 
 import Block from "./block";
 import { Container, Row } from "./styles";
@@ -10,9 +11,20 @@ import { INDEX } from "typings";
 const Grid: FC = () => {
   const dispatch = useDispatch<Dispatch<AnyAction>>();
   const create = useCallback(() => dispatch(createGrid()), [dispatch]);
+
   useEffect(() => {
     create();
   }, [create]);
+
+  const moveDown = () => {};
+  const moveUp = () => {};
+  const moveRight = () => {};
+  const moveLeft = () => {};
+
+  useMousetrap("down", moveDown);
+  useMousetrap("up", moveUp);
+  useMousetrap("left", moveLeft);
+  useMousetrap("right", moveRight);
 
   return (
     <Container>

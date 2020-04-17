@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Container } from "./styles";
 import { Dispatch, AnyAction } from "redux";
 
 import { IReducer, selectBlock } from "reducers";
+import { Container } from "./styles";
 import { N, INDEX } from "typings";
 
 interface IProps {
