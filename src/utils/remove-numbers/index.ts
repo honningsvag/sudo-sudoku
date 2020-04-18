@@ -1,5 +1,5 @@
 import { GRID } from "typings";
-import { getRandomIndex, copyGrid } from "utils";
+import { getRandomIndex, copyGrid, solveGrid } from "utils";
 import global from "global";
 /**
  * removes numbers from a filled grid to start the sudoku challenge
@@ -21,6 +21,7 @@ const removeNumbers = (grid: GRID, attempts = 5): GRID => {
 
     const gridCopy = copyGrid(grid);
     global.counter = 0;
+    solveGrid(gridCopy);
 
     if (global.counter !== 1) {
       grid[row][col] = backup;
