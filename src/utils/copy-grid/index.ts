@@ -1,5 +1,4 @@
 import { GRID, INDEX } from "typings";
-import { fillGrid } from "utils";
 
 const copyGrid = (grid: GRID): GRID => {
   const gridCopy: GRID = [
