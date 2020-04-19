@@ -1,4 +1,5 @@
 export { default as fillGrid } from "./fill-grid";
+export { default as compareArrays } from "./compare-arrays";
 export { default as copyGrid } from "./copy-grid";
 export { default as createFullGrid } from "./create-grid";
 export { default as getRandomIndex } from "./get-random-index";
