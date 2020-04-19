@@ -1,7 +1,8 @@
-import { AnyAction, bindActionCreators } from "redux";
+import { AnyAction } from "redux";
 import { IReducer } from "./interfaces";
-import { createFullGrid, removeNumbers, copyGrid } from "utils";
+import { createFullGrid, removeNumbers, copyGrid, compareArrays } from "utils";
 import * as types from "./types";
+import { GRID } from "typings";
 
 const initialState: IReducer = {};
 
@@ -35,7 +36,10 @@ const reducer = (state = initialState, action: AnyAction): IReducer => {
           return state;
         }
         state.workingGrid[action.coords[0]][action.coords[1]] = action.value;
-        if ()
+        if (compareArrays(state.workingGrid, state.solvedGrid)) {
+          alert("Completed!");
+        }
+        return { ...state, workingGrid: [...state.workingGrid] as GRID };
       }
       return state;
     }

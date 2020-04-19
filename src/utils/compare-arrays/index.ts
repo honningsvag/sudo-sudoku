@@ -3,7 +3,7 @@
  * @param arr1 first array to compare
  * @param arr2 second array to compare
  */
-const compareArrays = (arr1: any[], arr2: []): boolean => {
+const compareArrays = (arr1: any[], arr2: any[]): boolean => {
   if (!Array.isArray(arr1) && !Array.isArray(arr2)) return arr1 === arr2;
   if (arr1.length !== arr2.length) return false;
 
