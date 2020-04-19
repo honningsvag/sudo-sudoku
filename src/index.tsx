@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 
-import { Card, Content, Grid, Title } from "components";
+import { Card, Content, Grid, Title, Numbers } from "components";
 import { GlobalStyles, theme } from "styles";
 import { configureStore, unregister } from "core";
 
@@ -17,6 +17,7 @@ ReactDOM.render(
         <Card>
           {" "}
           <Grid />
+          <Numbers />
         </Card>
       </Content>
     </Provider>
