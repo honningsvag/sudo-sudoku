@@ -1,9 +1,9 @@
-import { AnyAction } from "redux";
+import { AnyAction, bindActionCreators } from "redux";
 import { IReducer } from "./interfaces";
 import { createFullGrid, removeNumbers, copyGrid } from "utils";
 import * as types from "./types";
 
-const initialState = {};
+const initialState: IReducer = {};
 
 const reducer = (state = initialState, action: AnyAction): IReducer => {
   switch (action.type) {
@@ -12,7 +12,7 @@ const reducer = (state = initialState, action: AnyAction): IReducer => {
       const gridCopy = copyGrid(solvedGrid);
       const challengeGrid = removeNumbers(gridCopy);
       const workingGrid = copyGrid(challengeGrid);
-      
+
       return {
         ...state,
         challengeGrid,
@@ -25,6 +25,20 @@ const reducer = (state = initialState, action: AnyAction): IReducer => {
         ...state,
         selectedBlock: action.coords,
       };
+
+    case types.FILL_BLOCK: {
+      if (state.workingGrid && state.solvedGrid) {
+        if (
+          state.solvedGrid[action.coords[0]][action.coords[1]] !== action.value
+        ) {
+          alert("Incorrect Option!");
+          return state;
+        }
+        state.workingGrid[action.coords[0]][action.coords[1]] = action.value;
+        if ()
+      }
+      return state;
+    }
 
     default:
       return state;
