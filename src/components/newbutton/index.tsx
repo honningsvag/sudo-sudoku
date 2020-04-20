@@ -1,8 +1,15 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
+import { useDispatch } from "react-redux";
+import { Action, Dispatch } from "redux";
 import { Button } from "components";
+import { createGrid } from "reducers";
 
 const NewButton: FC = () => {
-  return <Button onClick={() => alert("New game WIP")}>New Game</Button>;
+  const dispatch = useDispatch<Dispatch<Action>>();
+  const createNewGrid = useCallback(() => {
+    if (window.confirm("Start a new game?")) dispatch(createGrid());
+  }, [dispatch]);
+  return <Button onClick={createNewGrid}>New Game</Button>;
 };
 
 export default NewButton;
