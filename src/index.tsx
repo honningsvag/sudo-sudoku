@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 
-import { Card, Content, Grid, Title, Numbers } from "components";
+import { Card, Content, Grid, Title, Numbers, NewButton } from "components";
 import { GlobalStyles, theme } from "styles";
 import { configureStore, unregister } from "core";
 
@@ -15,7 +15,7 @@ ReactDOM.render(
       <Content>
         <Title>Sudo Sudoku</Title>
         <Card>
-          {" "}
+          <NewButton />
           <Grid />
           <Numbers />
         </Card>
